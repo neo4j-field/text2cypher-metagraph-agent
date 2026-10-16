@@ -1,0 +1,12 @@
+Given the input CSV of label (node label), and sample key/value properties for instances of that node label (propStrings)
+
+generate a semantic text description that can be used as the basis for a text embedding to enable vector search
+
+then for each label generate a Cypher statement that ends with a semi-colon like this
+
+MATCH (nl:__NodeLabel__ {label: '<label>'})
+SET nl.semantic_text = '<semantic text>';
+
+// example
+MATCH (nl:__NodeLabel__ {label: 'Sample'})
+SET nl.semantic_text = 'Definition of sample label.';
